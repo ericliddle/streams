@@ -1,5 +1,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project part of course Modern React with Redux lead by Stephen Grider
+
+Initial commit is scaffolding of a Twitch clone app
+
+Up to this point the app includes:
+-Initial React Router set up
+-OAuth with login/logout conditional rendering
+-Minimal style with Semantic UI
+-Component level state
+
+Next steps:
+-Implementing Redux
+-Additional Styling
+-Adding live streams
+-Adding function to create/edit/delete stream (CRUD)
+
 ## Available Scripts
 
 In the project directory, you can run:
