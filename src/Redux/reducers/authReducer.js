@@ -2,15 +2,15 @@
 //Initializer such as isSingedIn
 
 const INITIAL_STATE = {
-  isSingedIn: null
+  isSignedIn: true
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'SIGN_IN':
-      return { ...state, isSingedIn: true };
+      return { ...state, isSignedIn: true };
     case 'SIGN_OUT':
-      return { ...state, isSingedIn: false };
+      return { ...state, isSignedIn: false };
     default:
       return state;
   }
