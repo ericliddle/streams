@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signIn, signOut } from '../Redux/actions';
 
 class GoogleAuth extends Component {
   state = { isSignedIn: null };
@@ -19,9 +21,15 @@ class GoogleAuth extends Component {
     });
   }
 
-  onAuthChange = () => {
-    console.log(this.auth);
-    this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+  onAuthChange = isSignedIn => {
+    //When when calling isSignedIn we receive boolean and can use that as an argument as opposed to a callback
+    // this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+    //Removing this.setState prevents state from being updated until state is wired through redux
+    if (isSignedIn === true) {
+      this.props.signIn();
+    } else {
+      this.props.signOut();
+    }
   };
 
   onSignInClick = () => {
@@ -57,4 +65,7 @@ class GoogleAuth extends Component {
   }
 }
 
-export default GoogleAuth;
+export default connect(
+  null,
+  { signIn, signOut }
+)(GoogleAuth);
